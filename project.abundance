@@ -980,8 +980,8 @@
     },
     {
       "atomType": "Constant",
-      "x": 0.07161458333333334,
-      "y": 0.8114285714285715,
+      "x": 0.059895833333333336,
+      "y": 0.9400000000000001,
       "uniqueID": "id-2942",
       "name": "UndersideOverhang",
       "value": 2.375
@@ -1080,7 +1080,8 @@
         },
         {
           "name": "Leg_Length_2",
-          "ioValue": 2.375
+          "ioValue": 1.78125,
+          "currentEquation": "UndersideOverhang * 0.75"
         },
         {
           "name": "Width",
@@ -1201,7 +1202,7 @@
           "ioValues": [
             {
               "name": "x length",
-              "ioValue": 2.375
+              "ioValue": 1.78125
             },
             {
               "name": "y length",
@@ -1271,7 +1272,7 @@
             },
             {
               "name": "zDist",
-              "ioValue": 1.1875,
+              "ioValue": 0.890625,
               "currentEquation": "Leg_Length_2 / 2"
             }
           ]
@@ -1312,7 +1313,7 @@
             {
               "name": "Shape 2",
               "ioValue": {
-                "geometry": "move-rotate-extrude-rectangle-2.375-1.5-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-0.25-0--90-0-0.25-0-1.1875",
+                "geometry": "move-rotate-extrude-rectangle-1.78125-1.5-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-0.25-0--90-0-0.25-0-0.890625",
                 "dimension": "3D",
                 "plane": {
                   "origin": [
@@ -1371,7 +1372,7 @@
             },
             {
               "name": "y",
-              "ioValue": 2.375,
+              "ioValue": 1.78125,
               "currentEquation": "Leg_Length_2"
             },
             {
@@ -2028,7 +2029,7 @@
         {
           "name": "Shape 2",
           "ioValue": {
-            "geometry": "move-rotate-f462194c-{\"geometry\":\"fuse-extrude-move-rectangle-1.625-1.5-0.8125-0-0-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-0.25-move-rotate-extrude-rectangle-2.375-1.5-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-0.25-0--90-0-0.25-0-1.1875\",\"tags\":[],\"bom\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"dimension\":\"3D\"}-0.125-{\"geometry\":\"move-extrude-rectangle-0.8125-2.5-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-0.8125-0.40625-0-0.01\",\"dimension\":\"3D\",\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"tags\":[],\"bom\":[]}-1-90-0--90-0.25-1.875-0",
+            "geometry": "move-rotate-f462194c-{\"geometry\":\"fuse-extrude-move-rectangle-1.625-1.5-0.8125-0-0-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-0.25-move-rotate-extrude-rectangle-1.78125-1.5-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-0.25-0--90-0-0.25-0-0.890625\",\"tags\":[],\"bom\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"dimension\":\"3D\"}-0.125-{\"geometry\":\"move-extrude-rectangle-0.8125-2.5-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-0.8125-0.40625-0-0.01\",\"dimension\":\"3D\",\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"tags\":[],\"bom\":[]}-1-90-0--90-0.25-1.875-0",
             "tags": [],
             "bom": [],
             "plane": {
@@ -3688,6 +3689,51 @@
           "ioValue": null
         }
       ]
+    },
+    {
+      "atomType": "ExtractTag",
+      "x": 0.7819010416666666,
+      "y": 0.7971428571428572,
+      "uniqueID": "id-3575",
+      "name": "Extract print",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ],
+      "tag": "print",
+      "tagIndex": 0
+    },
+    {
+      "atomType": "Export",
+      "x": 0.8951822916666666,
+      "y": 0.7828571428571428,
+      "uniqueID": "id-3578",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "File Type",
+          "ioValue": "STL",
+          "currentEquation": "STL"
+        },
+        {
+          "name": "Resolution (dpi)",
+          "ioValue": 96
+        },
+        {
+          "name": "Part Name",
+          "ioValue": "z-hang-hook",
+          "currentEquation": "z-hang-hook"
+        }
+      ],
+      "type": "STL",
+      "resolution": 96,
+      "importIndex": 0,
+      "partName": "z-hang-hook"
     }
   ],
   "allConnectors": [
@@ -3730,11 +3776,6 @@
       "ap2Name": "Leg_Length_2",
       "ap1ID": "id-2940",
       "ap2ID": "id-2822"
-    },
-    {
-      "ap2Name": "Leg_Length_2",
-      "ap1ID": "id-2942",
-      "ap2ID": "id-2962"
     },
     {
       "ap2Name": "Shape 1",
@@ -3830,6 +3871,16 @@
       "ap2Name": "number or geometry",
       "ap1ID": "id-3536",
       "ap2ID": "id-2780"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-3536",
+      "ap2ID": "id-3575"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-3575",
+      "ap2ID": "id-3578"
     }
   ],
   "unitsKey": "Inches",
