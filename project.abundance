@@ -3030,8 +3030,8 @@
     },
     {
       "atomType": "Assembly",
-      "x": 0.8300781250000001,
-      "y": 0.44285714285714284,
+      "x": 0.771484375,
+      "y": 0.2914285714285714,
       "uniqueID": "id-3459",
       "ioValues": [
         {
@@ -3047,6 +3047,73 @@
           "ioValue": null
         }
       ]
+    },
+    {
+      "atomType": "Molecule",
+      "x": 0.5266927083333334,
+      "y": 0.8,
+      "uniqueID": "id-3465",
+      "name": "Molecule",
+      "ioValues": [
+        {
+          "name": "height",
+          "ioValue": 0.25,
+          "currentEquation": "0.25"
+        },
+        {
+          "name": "diam",
+          "ioValue": 0.75
+        }
+      ],
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-3467",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Circle",
+          "x": 0.24739583333333331,
+          "y": 0.5057142857142857,
+          "uniqueID": "id-3469",
+          "ioValues": [
+            {
+              "name": "diameter",
+              "ioValue": 0.75
+            }
+          ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0.0231,
+          "y": 0.3971428571428572,
+          "uniqueID": "id-3472",
+          "name": "height"
+        },
+        {
+          "atomType": "Input",
+          "x": 0.0231,
+          "y": 0.4811428571428572,
+          "uniqueID": "id-3475",
+          "name": "diam"
+        }
+      ],
+      "allConnectors": [
+        {
+          "ap2Name": "diameter",
+          "ap1ID": "id-3475",
+          "ap2ID": "id-3469"
+        }
+      ],
+      "fileTypeVersion": 1
     }
   ],
   "allConnectors": [
